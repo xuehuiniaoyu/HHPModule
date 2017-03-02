@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE app-config SYSTEM "com.huan.hhp">
+<app-config ver="1.1">
+    <persistence-resources>
+
+        <!-- 服务器项目目录 -->
+        <resource name="pj-path" value="http://172.10.10.211:8080/HHybridPlugin" />
+        <resource name="module-path" value="/HHPModule/app.zip" ver="1.0" />
+
+        <!--<resource name="def-application" value="com.huan.hhp.PluginApplication" />
+        <resource name="def-activity" value="com.huan.hhp.SimplePluginActivity" />-->
+
+        <resource name="my-application" value="com.example.HHPModule.MyApplication" />
+        <resource name="main-activity" value="com.example.HHPModule.ModuleFirstActivity" />
+
+        <!-- keepMilliseconds 表示退出后保留的时间 -->
+        <resource name="main-layout" value="/HHPModule/main_layout.xml" keepMilliseconds="2000" />
+
+    </persistence-resources>
+
+    <plugin-list>
+        <plugin id="module" name="module" project="{pj-path}" file="{module-path}" isMain="true">
+            <application class="{my-application}">
+                <activity name="main-activity" class="{main-activity}" layout="{main-layout}" isMain="true">
+                    <intent />
+                </activity>
+            </application>
+        </plugin>
+    </plugin-list>
+</app-config>
